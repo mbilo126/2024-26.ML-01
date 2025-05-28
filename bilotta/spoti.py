@@ -101,7 +101,7 @@ preprocessor = ColumnTransformer(
     transformers=[
         ('num', StandardScaler(), numerical_features),
         ('cat', OneHotEncoder(sparse_output=False, handle_unknown='ignore'), categorical_features),
-        ('ord', OrdinalEncoder(handle_unknown='ignore'), ordinal_features)
+        ('ord', OrdinalEncoder(handle_unknown='use_encoded_value'), ordinal_features)
     ],
     remainder='passthrough',
     verbose_feature_names_out=False
