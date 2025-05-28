@@ -86,7 +86,7 @@ X = df[feature_cols]
 y = df['popular']
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X, y, test_size=0.2, random_state=42, stratify=y
 )
 
 numerical_features = ['danceability', 'energy', 'loudness', 'speechiness',
@@ -101,7 +101,7 @@ preprocessor = ColumnTransformer(
     transformers=[
         ('num', StandardScaler(), numerical_features),
         ('cat', OneHotEncoder(sparse_output=False, handle_unknown='ignore'), categorical_features),
-        ('ord', OrdinalEncoder(handle_unknown='use_encoded_value'), ordinal_features)
+        ('ord', OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1), ordinal_features)
     ],
     remainder='passthrough',
     verbose_feature_names_out=False
