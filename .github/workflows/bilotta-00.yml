@@ -24,3 +24,15 @@ jobs:
           sparse-checkout: |
             bilotta
       - run: ls -la
+  machinelearning:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            bilotta
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pip install -r bilotta/requirements1.txt
+      - run: python bilotta/spoti.py
