@@ -14,3 +14,13 @@ jobs:
       - run: ls -la
       - run: pwd
       - run: env
+  okkio:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Ci son due coccodrilli e un alligatore, due piccoli serpenti, un'aquila reale il gatto il topo l'elefante, non manca più nessuno, solo non si vedono i due leocorni"
+      - run: echo "c'ha le puppe a pera"
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            bilotta
+      - run: ls -la
