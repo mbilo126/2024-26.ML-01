@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: echo "Ci son due coccodrilli e un alligatore, due piccoli serpenti, un'aquila reale il gatto il topo l'elefante, non manca più nessuno, solo non si vedono i due leocorni"
       - run: echo "c'ha le puppe a pera"
-      - run: puthon --version
+      - run: python --version
       - run: ifconfig
       - run: pip --version
       - run: lsb_release -d
