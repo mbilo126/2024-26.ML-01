@@ -1,5 +1,6 @@
 import pandas as pd
-import numpy as np
+import os
+import pickle
 from scipy.stats import randint, uniform
 from sklearn.model_selection import train_test_split, RandomizedSearchCV, StratifiedKFold
 from sklearn.compose import ColumnTransformer
@@ -148,3 +149,13 @@ print(f'''
 Mean Absolute Error = {MAE}
 Accuracy = {ACC}
 ''')
+os.makedirs("bilotta", exist_ok=True)
+
+model_path = "bilotta/model.pkl"
+
+if not os.path.exists(model_path):
+    with open(model_path, "wb") as f:
+        pickle.dump(best_model, f)
+    print("Modello salvato in bilotta/model.pkl")
+else:
+    print(" Il file model.pkl esiste già, non è stato sovrascritto.")
