@@ -76,13 +76,13 @@ def trova_macro_genere(genere):
 df['macro_genre'] = df['genre'].apply(trova_macro_genere)
 print("\nDistribuzione macro generi:")
 print(df['macro_genre'].value_counts())
-
+print(df.dtypes)
 feature_cols = [
     'danceability', 'energy', 'loudness', 'speechiness', 'acousticness',
     'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms',
     'key', 'time_signature', 'macro_genre', 'mode', 'year'
 ]
-
+print(df[feature_cols].dtypes)
 X = df[feature_cols]
 y = df['popular']
 
