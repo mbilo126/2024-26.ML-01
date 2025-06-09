@@ -28,5 +28,4 @@ def hello(client):
     response = client.post("/infer", json={"input_data": input_data})
     assert response.status_code == 200
     data = response.get_json()
-    assert "result" in data
-    assert "value" in data["result"]
+    assert "prediction" in data
