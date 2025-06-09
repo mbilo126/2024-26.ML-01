@@ -7,7 +7,7 @@ def client():
     with flask_app.test_client() as client:
         yield client
 
-def hello(client):
+def test_hello(client):
     input_data = {
         'danceability': 0.5,
         'energy': 0.08,
