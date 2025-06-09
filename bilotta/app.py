@@ -17,7 +17,7 @@ def ciao():
     data = request.get_json()
     input_data = data["input_data"]
 
-    with open("bilotta/model.pkl", "rb") as f:
+    with open("model.pkl", "rb") as f:
         mymodel = pickle.load(f)
 
     try:
